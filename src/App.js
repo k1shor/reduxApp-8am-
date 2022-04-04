@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Provider } from 'react-redux';
+import MyRoutes from './MyRoutes';
+import { createStore } from 'redux';
+// import itemreducer from './reducers/itemreducer';
+// import gamereducer from './reducers/gamereducer';
+// import rootreducer from './reducers/rootreducer';
+import FinalRootReducer from './FinalReducer/FinalRootReducer';
+
 
 function App() {
+  // const myStore = createStore(itemreducer);
+  // const gameStore = createStore(gamereducer)
+
+  // const store = createStore(rootreducer)
+
+  const finalStore = createStore(FinalRootReducer)
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <Provider store={myStore}>
+    // <Provider store={gameStore}>
+    <Provider store={finalStore}>
+      <MyRoutes/>
+    </Provider>
   );
 }
 

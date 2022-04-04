@@ -1,0 +1,10 @@
+import { combineReducers } from "redux";
+import storeReducer from "./storeReducer";
+import cartReducer from "./cartReducer"
+
+const FinalRootReducer = combineReducers({
+    cart:cartReducer,
+    store:storeReducer
+})
+
+export default FinalRootReducer
